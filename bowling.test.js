@@ -17,14 +17,20 @@ describe("A single frame in bowling", function(){
   });
 
   it("if a bowl is a spare, return spare", function() {
-    var arr = [7, 3];
+    var arr = [0, 10];
     var score = bowling(arr);
     expect(score).to.eql("spare");
   });
 
   it("if score is over 10, return cheater", function() {
-    var arr = [20, 12];
+    var arr = [-20, 12];
     var score = bowling(arr);
     expect(score).to.eql("Cheater");
+  });
+
+  it("if open frame return score", function() {
+    var arr = [3, 5];
+    var score = bowling(arr);
+    expect(score).to.eql(8);
   });
 });
